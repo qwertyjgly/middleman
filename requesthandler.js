@@ -15,10 +15,10 @@ var con = mysql.createConnection({
 });
 
 
-const options = {
+/*const options = {
         key: fs.readFileSync('server-key.pem'),
         cert: fs.readFileSync('server-csr.pem')
-};
+};*/
 
 
 con.connect(function(err) {
@@ -26,11 +26,12 @@ con.connect(function(err) {
         console.log("MySQL interface operational");
 });
 
-https.createServer({
+/*https.createServer({
         key: fs.readFileSync('server-key.pem'),
         cert: fs.readFileSync('server-cert.pem')
 },
-function  (req, res) {
+function (req, res) {*/
+http.createServer( function (req, res) {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader('Access-Control-Allow-Methods', '*');
         res.setHeader('Access-Control-Allow-Headers', '*');
