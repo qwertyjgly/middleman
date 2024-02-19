@@ -36,6 +36,7 @@ http.createServer( function (req, res) {
         res.setHeader('Access-Control-Allow-Methods', '*');
         res.setHeader('Access-Control-Allow-Headers', '*');
         res.setHeader('Access-Control-Allow-Credentials', true);
+        res.setHeader('Referrer-Policy', 'no-referrer');
 
         if (req.method === "OPTIONS") {
                 res.writeHead(200);
