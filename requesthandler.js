@@ -32,7 +32,7 @@ con.connect(function(err) {
         cert: fs.readFileSync('server-cert.pem')
 },
 function (req, res) {*/
-http.createServer( function (req, res) {
+//http.createServer( function (req, res) {
     http.createServer(function (req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', '*');
