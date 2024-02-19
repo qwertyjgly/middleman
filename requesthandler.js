@@ -47,8 +47,8 @@ http.createServer( function (req, res) {
         return;
     }
 
-        res.writeHead(200);
-        res.end();
-        return;
+    res.writeHead(200);
+    res.end();
+    return;
 }).listen(8080);
 
