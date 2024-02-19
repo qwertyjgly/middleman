@@ -33,11 +33,19 @@ con.connect(function(err) {
 },
 function (req, res) {*/
 http.createServer( function (req, res) {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', '*');
-        res.setHeader('Access-Control-Allow-Headers', '*');
-        res.setHeader('Access-Control-Allow-Credentials', true);
-        res.setHeader('Referrer-Policy', 'no-referrer');
+    http.createServer(function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader('Access-Control-Allow-Headers', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Referrer-Policy', 'no-referrer');
+
+    if (req.method === 'OPTIONS') {
+        // This is a preflight request. Respond successfully:
+        res.writeHead(200);
+        res.end();
+        return;
+    }
 
         res.writeHead(200);
         res.end();
